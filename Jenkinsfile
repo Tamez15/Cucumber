@@ -5,8 +5,7 @@ pipeline {
       parallel {
         stage('Maven Version') {
           steps {
-            def mvnHome = tool name: 'Apache Maven 3.8.5', type: 'maven'
-            sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+            sh 'mvn -v'
           }
         }
 
