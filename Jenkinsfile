@@ -2,6 +2,8 @@ pipeline {
   agent any
   stages {
     stage('Maven Version') {
+      parallel {
+        stage('Maven Version') {
           steps {
             sh 'mvn -v'
           }
@@ -21,3 +23,5 @@ pipeline {
         sh 'mvn clean test'
       }
     }
+  }
+}
